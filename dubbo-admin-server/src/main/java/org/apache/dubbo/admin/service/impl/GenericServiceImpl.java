@@ -39,7 +39,7 @@ public class GenericServiceImpl {
     @PostConstruct
     public void init() {
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress(registry.getUrl().getProtocol() + "://" + registry.getUrl().getAddress());
+        registryConfig.setAddress(registry.getUrl().getProtocol() + "://" + registry.getUrl().getAddress()+ "?namespace=" + registry.getUrl().getParameter("namespace"));
         registryConfig.setGroup(registry.getUrl().getParameter("group"));
 
         applicationConfig = new ApplicationConfig();
